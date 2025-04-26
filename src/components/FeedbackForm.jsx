@@ -28,7 +28,7 @@ function FeedbackForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-xl mx-auto bg-white dark:bg-gray-800 dark:shadow-gray-400 p-6 rounded shadow">
+    <form onSubmit={handleSubmit} className="w-full max-w-xl mx-auto bg-white dark:bg-gray-800 dark:shadow-gray-400 p-6 rounded shadow">
       <div className="mb-4">
         <label className="block mb-1 font-medium text-gray-900 dark:text-white">Full Name</label>
         <input

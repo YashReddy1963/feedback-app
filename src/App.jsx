@@ -1,6 +1,6 @@
 import { useState } from "react";
 import FeedbackForm from "./components/FeedbackForm";
-import FeedbackList from "./components/FeebackList";
+import FeedbackList from "./components/FeedbackList";
 
 function App() {
   const [showFeedbacks, setShowFeedbacks] = useState(false);
@@ -17,7 +17,7 @@ function App() {
       }`}
     >
       <div
-        className={`rounded-3xl shadow-2xl pt-4 pb-4 w-2xl transition-all duration-300 ${
+        className={`rounded-3xl shadow-2xl pt-4 pb-4 w-full max-w-2xl mx-2 sm:mx-4 transition-all duration-300 ${
           isDarkMode ? "bg-gray-800 shadow-gray-700" : "bg-white shadow-gray-400"
         }`}
       >
