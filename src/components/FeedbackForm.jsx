@@ -13,19 +13,24 @@ function FeedbackForm() {
     e.preventDefault();
     setLoading(true);
     setSubmitted(false);
-
+  
     const res = await fetch("/.netlify/functions/submit-feedback", {
       method: "POST",
-      body: JSON.stringify({ ...formData, timestamp: Date.now() }),
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        feedback: formData.message,
+      }),
     });
-
+  
     if (res.ok) {
       setSubmitted(true);
       setFormData({ name: "", email: "", message: "" });
     }
-
+  
     setLoading(false);
   };
+  
 
   return (
     <form onSubmit={handleSubmit} className="w-full max-w-xl mx-auto bg-white dark:bg-gray-800 dark:shadow-gray-400 p-6 rounded shadow">

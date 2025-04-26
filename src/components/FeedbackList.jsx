@@ -6,7 +6,10 @@ function FeedbackList() {
   useEffect(() => {
     fetch("/.netlify/functions/get-feedback")
       .then((res) => res.json())
-      .then((data) => setFeedbacks(data));
+      .then((data) => {
+        console.log("Fetched feedback data:", data);
+        setFeedbacks(data);
+      });
   }, []);
 
   return (
@@ -15,12 +18,15 @@ function FeedbackList() {
         <p className="text-center">No feedbacks yet.</p>
       ) : (
         feedbacks.map((fb, index) => (
-          <div key={index} className="p-4 bg-white dark:bg-gray-800 rounded shadow w-full max-w-xl mx-auto dark:shadow-gray-400">
+          <div
+            key={index}
+            className="p-4 bg-white dark:bg-gray-800 rounded shadow w-full max-w-xl mx-auto dark:shadow-gray-400"
+          >
             <h3 className="text-lg font-bold text-white">{fb.name}</h3>
             <p className="text-sm text-gray-500">{fb.email}</p>
-            <p className="mt-2 text-white">{fb.message}</p>
+            <p className="mt-2 text-white">{fb.feedback}</p> 
             <p className="mt-2 text-xs text-gray-400">
-              Submitted on: {new Date(fb.timestamp).toLocaleString()}
+              Submitted on: {new Date(fb.created_at).toLocaleString()}
             </p>
           </div>
         ))
