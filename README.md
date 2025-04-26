@@ -1,12 +1,62 @@
-# React + Vite
+# Feedback Collector App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple, clean, and mobile-responsive Feedback Collection App built using **React** and **Netlify Serverless Functions**.  
+Users can submit their feedback, view all submitted feedbacks, and switch between dark and light modes.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Project Summary
 
-## Expanding the ESLint configuration
+This project allows users to submit their feedback via a form.  
+The submitted feedback is temporarily stored using **Netlify Functions** inside a serverless environment (in a `/tmp` JSON file).  
+Users can also view all feedbacks submitted during that session!
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React, TailwindCSS
+- **Backend**: Netlify Serverless Functions (Node.js)
+- **Deployment**: Netlify
+
+---
+
+
+## 🛠️ How to Run Locally
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/your-username/feedback-collector.git
+   cd feedback-collector
+
+2. Install dependencies
+    ```bash
+    npm install
+
+3. Start the development server
+    ```bash
+    npm run dev
+
+4. Set up Netlify Functions:
+    * Create a folder `/netlify/functions`
+    * Add your two serverless functions:
+        * `submit-feedback.js`
+        * `get-feedback.js`
+
+5. Run your app locally with functions
+
+---
+
+## Deployment Instructions
+* Push your project to GitHub.
+* Connect your GitHub repository to Netlify.
+* In Netlify settings:
+    * Set the Functions folder as netlify/functions
+* Deploy!
+
+---
+
+## Live Link
+[Feedback Collector App](https://ubiquitous-souffle-357ccd.netlify.app/)
+
+---
